@@ -1,5 +1,3 @@
-
-
 import 'package:app_meal/feauters/data/db_helper/models/meal_models.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
@@ -19,11 +17,7 @@ class DatabaseHelper {
 
   Future<Database> _initDatabase() async {
     String path = join(await getDatabasesPath(), 'meals.db');
-    return await openDatabase(
-      path,
-      version: 2,
-      onCreate: _createDatabase,
-    );
+    return await openDatabase(path, version: 2, onCreate: _createDatabase);
   }
 
   Future<void> _createDatabase(Database db, int version) async {
@@ -52,5 +46,11 @@ class DatabaseHelper {
       return Meal.fromMap(mealJson);
     }).toList();
     return meals;
+  }
+
+  // في db_helper.dart
+  Future<int> deleteMeal(int id) async {
+    final db = await database;
+    return await db.delete('meals', where: 'id = ?', whereArgs: [id]);
   }
 }

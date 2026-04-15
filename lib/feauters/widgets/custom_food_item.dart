@@ -35,7 +35,7 @@ class CustomFoodItem extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(imageUrl, width: 150.w,fit: BoxFit.cover, height: 100.h),
+              Image.network(imageUrl, width: 150.w,fit: BoxFit.cover, height: 100.h),
               HeightSpace(8),
               SizedBox(
                 width: 120.w,child: Text(name, style: AppTextStyles.black16medium)),
