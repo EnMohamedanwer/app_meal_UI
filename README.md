@@ -1,18 +1,25 @@
-# app_meal
+# 📱 App Meal UI
 
-A new Flutter project.
+A simple UI-based mobile application built with Flutter.
 
-## Getting Started
+The app displays meals in a clean and organized way, with a smooth user experience.
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+* Splash screen for first-time app launch
+* Clean and modern UI design
+* Add meals with:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  * Image upload
+  * Preparation time
+  * Rating
+* Dashboard-style layout for managing and viewing meals
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# app_meal_UI-
-# app_meal_UI
+## 🛠️ Tech
+
+* Flutter
+* Dart
+
+## 📌 Notes
+
+This project focuses on UI implementation only (no backend functionality).
