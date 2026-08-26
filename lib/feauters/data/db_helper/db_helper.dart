@@ -15,6 +15,7 @@ class DatabaseHelper {
     return _database!;
   }
 
+
   Future<Database> _initDatabase() async {
     String path = join(await getDatabasesPath(), 'meals.db');
     return await openDatabase(path, version: 2, onCreate: _createDatabase);

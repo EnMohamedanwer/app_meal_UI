@@ -1,5 +1,5 @@
 import 'package:app_meal/core/style/app_assets.dart';
-import 'package:app_meal/core/style/app_colors.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,34 +10,26 @@ class CustomHomeTopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(
-          AppAssets.homescreenimage,
-          width: double.infinity,
-          height: 346,
-          fit: BoxFit.cover,
-        ),
-        Positioned(
-          top: 30,
-          left: 20,
-          bottom: 20,
-          child: Container(
-            width: 195.w,
-            height: 150.h,
-            decoration: BoxDecoration(
-              color: AppColors.primarycolor.withOpacity(0.10),
-              borderRadius: BorderRadius.circular(48.r),
-            ),
-            alignment: Alignment.center,
 
-            child: Text(
-              textAlign: TextAlign.center,
-              " Welcome Add A new meal",
-              style: TextStyle(
-                color: AppColors.white,
-                fontSize: 32.sp,
-                fontWeight: FontWeight.bold,
-              ),
+        CarouselSlider(
+          items: [
+            SizedBox(
+              width: double.infinity,
+              height: 200,
+              child: Image.asset('assets/images/pizza.png', fit: BoxFit.cover),
             ),
+            Image.asset(AppAssets.exampleFoodimage),
+            Image.asset(AppAssets.addmealimage),
+          ],
+          options: CarouselOptions(
+            height: 350.h,
+            viewportFraction: 1.4,
+            autoPlay: true,
+            autoPlayInterval: const Duration(seconds: 3),
+            autoPlayAnimationDuration: const Duration(milliseconds: 800),
+            autoPlayCurve: Curves.fastOutSlowIn,
+            enlargeCenterPage: true
+
           ),
         ),
       ],

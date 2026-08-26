@@ -1,83 +1,55 @@
-import 'package:app_meal/core/style/app_colors.dart';
-import 'package:app_meal/core/style/app_text_styles.dart';
-import 'package:app_meal/widgets/spacing_widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:app_meal/core/style/app_assets.dart';
+import 'package:app_meal/feauters/data/db_helper/models/meal_models.dart';
 
-class CustomFoodItem extends StatelessWidget {
-  final String imageUrl;
-  final String name;
-  final double rate;
-  final String time;
-  final Function() onTap;
-
-  const CustomFoodItem({
-    super.key,
-    required this.imageUrl,
-    required this.name,
-    required this.rate,
-    required this.time,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap, 
-      child: SizedBox(
-
-        child: Container(
-          padding: EdgeInsets.all(8.sp),
-          decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(12.r),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.network(imageUrl, width: 150.w,fit: BoxFit.cover, height: 100.h),
-              HeightSpace(8),
-              SizedBox(
-                width: 120.w,child: Text(name, style: AppTextStyles.black16medium)),
-              HeightSpace(8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.star, color: AppColors.primarycolor, size: 16.sp),
-                       WidthSpace(4),
-                      Text(
-                        rate.toString(),
-                        style: AppTextStyles.grey14medium.copyWith(
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                   WidthSpace(10),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.timer,
-                        color: AppColors.primarycolor,
-                        size: 16.sp,
-                      ),
-                      const WidthSpace(4),
-                      Text(
-                        time.toString(),
-                        style: AppTextStyles.grey14medium.copyWith(
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+class MealDetails {
+  static final List<Meal> meals = [
+    Meal(
+      name: 'Pizza',
+      image: AppAssets.pizzaimage,
+      description: 'Delicious pepperoni pizza with melted cheese',
+      time: '25 mins',
+      rate: 4.5,
+      price: 12.99,
+    ),
+    Meal(
+      name: 'Zinger Burger',
+      image: AppAssets.zingerburger,
+      description: 'Juicy beef burger with fresh lettuce and tomato',
+      time: '15 mins',
+      rate: 4.2,
+      price: 8.99,
+    ),
+    Meal(
+      name: 'Makarna',
+      image: AppAssets.makarna,
+      description: 'Creamy Alfredo pasta with grilled chicken',
+      time: '20 mins',
+      rate: 4.8,
+      price: 10.00,
+    ),
+    Meal(
+      name: 'Fried Chicken',
+      image: AppAssets.friedchicken,
+      description: 'Tender roasted chicken with herbs and spices',
+      time: '30 mins',
+      rate: 4.6,
+      price: 14.00,
+    ),
+    Meal(
+      name: 'Crispy Fries',
+      image: AppAssets.crispyFries8,
+      description: 'Crispy fries with a side of creamy tomato sauce',
+      time: '10 mins',
+      rate: 4.5,
+      price: 5.00,
+    ),
+    Meal(
+      name: 'Hotdog',
+      image: AppAssets.hotdog,
+      description: 'Juicy beef hotdog with fresh vegetables',
+      time: '15 mins',
+      rate: 4.3,
+      price: 6.50,
+    ),
+  ];
 }

@@ -1,34 +1,39 @@
 class Meal {
   final String name;
-  final String imageUrl;
+  final String image;
   final String description;
   final String time;
   final double rate;
-  final int? id;
+  final double price;
+  // final int? id;
 
   Meal(
       {required this.name,
-      required this.imageUrl,
+      required this.image,
       required this.description,
       required this.time,
-      this.id,
-      required this.rate});
+      required this.price,
+      // this.id,
+      required this.rate
+       });
 
   Map<String, dynamic> toMap() {
     return {
       'name': name,
-      'imageUrl': imageUrl,
+      'image': image,
       'description': description,
       'time': time,
+      'price': price,
       'rate': rate,
     };
   }
 
   factory Meal.fromMap(Map<String, dynamic> map) {
     return Meal(
-      id: map['id'],
+      // id: map['id'],
       name: map['name'],
-      imageUrl: map['imageUrl'],
+      image: map['image'],
+      price: map['price'],
       description: map['description'],
       time: map['time'],
       rate: map['rate'],
